@@ -1,0 +1,63 @@
+body {
+	text-align: center;
+	line-height: 267px;
+	font-size: 40px;
+	font-family: sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: white;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 1px;
+}
+
+.overlay-wrapper,
+.sliding-overlay-wrapper {
+	width: 400px;
+	height: 267px;
+	margin: 20px auto;
+
+	/* Step 1A: Look up "how to hide overflow css"
+	You will need this for the overlays. */
+	overflow: hidden;
+
+	/* Step 1B: We want to position the overlays relative to their parents */
+	position: relative;
+	
+}
+
+.overlay,
+.sliding-overlay {
+	width: 400px;
+	height: 267px;
+	background-color: rgba(221, 82, 56, .9);
+
+	/* Step 1C: position the overlays directly over the image */
+	/* Step 1D: add a transition so the animation effects are smooth */
+	position: absolute;
+	top: 0;
+	transition: all 0.5s ease-in-out;
+}
+
+
+/* Step 2: add the hover effects the overlay */
+/* https://larissam.github.io/fewd_image_overlay_example/ */
+
+.overlay {
+	/* what is the default overlay state? */
+	opacity: 0;
+}
+
+.overlay-wrapper:hover .overlay {
+	/* what does the overlay look like when it's hovered? */
+	opacity: 1;
+}
+
+
+/* Step 3: add the hover effects for the sliding overlay HINT: use a transform */
+.sliding-overlay {
+	transform: translateX(-100%);	
+}
+
+.sliding-overlay-wrapper:hover .sliding-overlay {
+	transform: translateX(0);
+}
